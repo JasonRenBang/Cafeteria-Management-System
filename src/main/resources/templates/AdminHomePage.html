@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin home page</title>
+</head>
+
+<body>
+    <h3  id="welcome" style=" margin-left: 500px" ></h3>
+    <a href="" id="viewallusers" style="margin-left: 550px; margin-top: 20px;position: absolute">
+         <button style="background-color: #00FFFF;width: 140px;height: 36px;color: #000000">view all customers</button>
+    </a>
+
+    <a href="" id="deletcustomers" style="margin-left: 550px; margin-top: 60px;position: absolute">
+        <button style="background-color: #00FFFF;width: 140px;height: 36px;color: #000000">delete users account</button>
+    </a>
+
+    <a href="" id="viewallchefs" style="margin-left: 550px; margin-top: 100px;position: absolute">
+        <button style="background-color: #00FFFF;width: 140px;height: 36px;color: #000000">view all chefs</button>
+    </a>
+
+    <a href="" id="hirechefs" style="margin-left: 550px; margin-top: 140px;position: absolute">
+        <button style="background-color: #00FFFF;width: 140px;height: 36px;color: #000000">hire chefs</button>
+    </a>
+
+    <a href="" id="dismissedchefs" style="margin-left: 550px; margin-top: 180px;position: absolute">
+        <button style="background-color: #00FFFF;width: 140px;height: 36px;color: #000000">dissmissed chefs</button>
+    </a>
+</body>
+
+<script type="text/javascript" th:inline="javascript">
+    var temp=[[${id}]];
+
+    var address1="http://localhost:8080/Adminhome/"+temp+"/viewAllCustomers";
+    var link1=document.getElementById("viewallusers");
+    link1.setAttribute("href",address1);
+
+    var address2="http://localhost:8080/Adminhome/"+temp+"/DeleteCustomersByAdmin";
+    var link2=document.getElementById("deletcustomers");
+    link2.setAttribute("href",address2);
+
+    var address3="http://localhost:8080/Adminhome/"+temp+"/viewAllChefs";
+    var link3=document.getElementById("viewallchefs");
+    link3.setAttribute("href",address3);
+
+    var address4="http://localhost:8080/Adminhome/"+temp+"/hireChefs";
+    var link4=document.getElementById("hirechefs");
+    link4.setAttribute("href",address4);
+
+    var address5="http://localhost:8080/Adminhome/"+temp+"/dismissedChefs";
+    var link5=document.getElementById("dismissedchefs");
+    link5.setAttribute("href",address5);
+
+    var wel="Welcome administrator,"+[[${name}]]+"!";
+    document.getElementById("welcome").innerHTML=wel;
+</script>
+
+</html>

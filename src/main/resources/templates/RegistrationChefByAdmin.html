@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+<form name="" th:action="@{/Adminhome/}+${id}+@{/doRegistrationChef}" method="post"  align="center">
+    <h3>Register New Chef</h3>
+    <div style="margin-top: 0px; margin-left: 0px">
+        <div>
+            <input type="text" name="id" value="" placeholder="Chef's staff id"
+                   class="form-control" style="width: 200px"/><br/>
+        </div>
+
+        <div>
+            <input type="text" name="username" value="" placeholder="Chef's NickName"
+                   class="form-control" style="width: 200px;"/><br/>
+        </div>
+
+        <div>
+            <input type="password" name="password" value="" placeholder="Chef account's Password"
+                   class="form-control" style="width: 200px;"/><br/>
+        </div>
+
+
+        <input type="submit" value="Register" class="btn btn-success"
+               style="margin-left: 5px">
+    </div>
+</form>
+</body>
